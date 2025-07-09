@@ -1,0 +1,1079 @@
+@charset "UTF-8";
+
+/*
+====================================
+------------------------------------
+1. home
+2. my logo
+3. navigation
+4. about
+5. project
+6. skill
+7. interview
+8. contact
+-------------------------------------
+=====================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+body {
+    font-family: 'Pretendard';
+    line-height: 1.5;
+    font-weight: 300;
+    font-size: clamp(14px, 1.5vw, 16px);
+    color: #000;
+    background-color: #fff;
+    margin: auto;
+}
+
+/* === typo === */
+h1 {
+    font-family:
+        'SUIT-Regular';
+    font-size: clamp(38px, 4vw, 48px);
+    color: #fff;
+}
+
+h2 {
+    font-size: clamp(12px, 2vw, 24px);
+    font-family: 'SUIT-Regular';
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(14px, 3vw, 48px);
+    font-family: 'SUIT-Regular';
+    font-weight: 500;
+}
+
+h4 {
+    font-size: clamp(14px, 3vw, 48px);
+    font-weight: 300;
+}
+
+h5 {
+    font-size: clamp(21px, 3vw, 32px);
+    font-weight: 500;
+}
+
+h6 {
+    font-size: clamp(18px, 3vw, 30px);
+}
+
+
+/* === img === */
+img {
+    display: block;
+}
+
+
+/* === a/ul === */
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* === home === */
+#home {
+    background-color: #000;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.home-in {
+    max-width: 1320px;
+    width: 100%;
+    height: 65%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+    padding-top: 17vh;
+    display: flex;
+}
+
+.text-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text-deco {
+    text-decoration: line-through;
+}
+
+@keyframes textmask {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.text-mask,
+.sign-mask {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.text-mask .text,
+.text-mask .text-deco {
+    transform: translateY(100%);
+    animation: textmask 1s ease-out forwards;
+}
+
+@keyframes signmask {
+    to {
+        transform: translateY(0);
+    }
+}
+
+.sign-mask .sign {
+    transform: translateY(-100%);
+    animation: signmask 1s ease-out forwards;
+}
+
+@keyframes line {
+    to {
+        transform: scaleX(1);
+    }
+
+    from {
+        transform: scaleX(0);
+    }
+}
+
+#home .line {
+    width: 20%;
+    background-color: #fff;
+    height: 0.3vw;
+    animation: line 1s ease-out;
+    transform-origin: left;
+}
+
+@keyframes videomask {
+    to {
+        clip-path: inset(0 0% 0 0);
+    }
+}
+
+.video-mask {
+    display: inline-block;
+    overflow: hidden;
+    animation: videomask 1s ease-out forwards;
+    clip-path: inset(0 100% 0 0);
+}
+
+video {
+    display: block;
+    width: 30vw;
+    max-width: 100%;
+}
+
+#home .text-row:nth-child(3) video {
+    width: 22vw;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(3px);
+    }
+}
+
+@keyframes scrollarrow {
+    to {
+        opacity: 100%;
+    }
+
+    from {
+        opacity: 0%;
+    }
+}
+
+.scroll-arrow {
+    font-family: 'SUIT-Regular';
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 2px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+
+    position: absolute;
+    bottom: 210px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: scrollarrow 1s ease-out;
+}
+
+.scroll-arrow img {
+    margin: 0 auto;
+    margin-bottom: 10px;
+     max-width: 100%;
+    animation: scroll 1s ease-in Infinite Alternate;
+}
+
+.home-in-media {
+    display: none;
+}
+
+
+/* === mylogo === */
+@keyframes mylogo {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.mylogo {
+    text-align: center;
+    font-family: "Krona One", sans-serif;
+    font-size: clamp(12px, 1.5vw, 18px);
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 20px 30px;
+    border-radius: 50px;
+
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -62.5px;
+
+    animation: mylogo 1s ease-out;
+}
+
+
+/* === navigation === */
+@keyframes nav {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#gnb {
+    display: flex;
+    justify-content: center;
+    gap: 0 30px;
+    position: fixed;
+    width: 100vw;
+    z-index: 5;
+    bottom: 60px;
+    align-items: center;
+
+    animation: nav 1s ease-out;
+}
+
+.nav {
+    display: flex;
+    gap: clamp(20px, 3.5vw, 80px);
+    justify-content: space-between;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 30px 80px;
+    border-radius: 50px;
+    box-sizing: border-box;
+}
+
+.nav li a {
+    font-size: clamp(10px, 1.5vw, 16px);
+    font-family: 'SUIT-Regular';
+    font-weight: 300;
+    display: block;
+
+    transition: color 0.5s;
+}
+
+.nav li a:hover {
+    color: #AE0000;
+}
+
+.menu {
+    display: none;
+}
+
+.gnb-top {
+    transition: 0.5s;
+}
+
+.gnb-top:hover {
+    transform: translateY(-10px);
+}
+
+
+/* === about === */
+#about {
+    margin-top: 100px;
+}
+
+.tit {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.about-text {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+#about .line {
+    width: 100%;
+    background-color: #000;
+    height: 0.1vw;
+    margin: 10px 0 30px 0;
+}
+
+.text-rignt {
+    display: flex;
+    align-items: end;
+    gap: 2vw;
+}
+
+.text-rignt h2 {
+    font-weight: 100;
+    color: #AE0000;
+    margin-bottom: 0.3%;
+}
+
+.about-text:nth-child(8),
+.about-text:nth-child(10) {
+    justify-content: flex-end;
+}
+
+
+/* === project ===*/
+#project {
+    margin: 150px 0;
+}
+
+.project-list {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: clamp(90px, 3vw, 115px) clamp(50px, 3vw, 100px);
+}
+
+.project-content {
+    flex: 1 1 clamp(280px, 45%, 600px);
+    box-sizing: border-box;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-content h2 {
+    color: #AE0000;
+    font-weight: 300;
+    font-size: clamp(16px, 2.5vw, 24px);
+}
+
+.project-content h5 {
+    padding-bottom: clamp(16px, 2.5vw, 10px);
+}
+
+.project-content p {
+    font-size: clamp(12px, 2vw, 16px);
+}
+
+.img-wrapper {
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 40px;     
+    position: relative;
+}
+
+.p-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    background-size: cover;
+    background-position: center;
+
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.p-img:hover {
+    transform: scale(1.1);
+}
+
+.link {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.link a {
+    font-family: 'SUIT-Regular';
+    border: 1px solid #D9D9D9;
+    padding: 8px 13px;
+    border-radius: 50px;
+    font-size: clamp(9px, 2vw, 12px);
+    font-weight: 500;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.link a:hover {
+    background-color: #AE0000;
+    border: 1px solid #AE0000;
+    color: #fff;
+}
+
+.project-content p {
+    margin-left: 5px;
+}
+
+.video-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.video-popup-content {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.video-popup video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+/* === skill === */
+#skill {
+    background-color: #000;
+}
+
+.skill-in {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding: clamp(50px, 2.5vw, 100px) 20px;
+    box-sizing: border-box;
+}
+
+#skill .tit h2 {
+    color: #fff;
+    font-weight: 700;
+    padding-bottom: clamp(10px, 2.5vw, 60px);
+    margin-left: -20px;
+}
+
+.skill-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0 20px;
+    margin-bottom: clamp(10px, 2.5vw, 20px);
+}
+
+.skill-bottom {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 0 20px;
+    padding-bottom: clamp(50px, 2.5vw, 100px);
+}
+
+.skill-top p,
+.skill-middle p,
+.skill-bottom p {
+    font-family: 'SUIT-Regular';
+    color: #000;
+    text-align: center;
+    margin-top: 32%;
+    font-weight: 500;
+    font-size: clamp(12px, 2.5vw, 16px);
+}
+
+.skill-top h5,
+.skill-middle h5,
+.skill-bottom h5 {
+    color: #000;
+    text-align: center;
+    font-size: clamp(18px, 2.5vw, 36px);
+}
+
+.program,
+.program2,
+.program3,
+.program4,
+.program5 {
+    width: 25%;
+    height: 25%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+.program::before,
+.program2::before,
+.program3::before,
+.program4::before,
+.program5::before {
+    bottom: 0;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0;
+    background: #fff;
+    transition: 0.5s ease-out;
+    z-index: -1;
+}
+
+.program-ani::before {
+    height: 100%;
+}
+
+.program-ani2::before {
+    height: 95%;
+}
+
+.program-ani3::before {
+    height: 90%;
+}
+
+.program-ani4::before {
+    height: 85%;
+}
+
+.program-ani5::before {
+    height: 75%;
+}
+
+.program,
+.program2,
+.program3,
+.program4,
+.program5 {
+    position: relative;
+    z-index: 3;
+}
+
+.skill-in-media {
+    display: none;
+}
+
+
+/* === interview === */
+#interview {
+    margin: 100px 0 150px 0;
+}
+
+.inter-list {
+    max-width: 1320px;
+    width: 100%;
+    padding: 0 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.inter-content {
+    width: 100%;
+    max-width: 380px;
+    min-width: 150px;
+    aspect-ratio: 3 / 4;
+    max-height: 500px;
+    border: 1px solid #848484;
+    background-color: #fff;
+    border-radius: 40px;
+    padding: 50px 40px 60px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: 0.3s;
+}
+
+.inter-content h6:nth-child(1) {
+    font-family: 'SUIT-Regular';
+    color: #AE0000;
+    font-weight: 600;
+}
+
+.inter-content h6:nth-child(2) {
+    font-weight: 700;
+    margin-bottom: 25pt;
+}
+
+.inter-content p {
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.text-main {
+    margin-bottom: 30px;
+}
+
+.inter-content b {
+    font-weight: 700;
+}
+
+.inter-content:nth-child(1) {
+    rotate: -5deg;
+    transform: translate(10px, 30px);
+}
+
+.inter-content:nth-child(2) {
+    z-index: 3;
+}
+
+.inter-content:nth-child(3) {
+    rotate: 5deg;
+    transform: translate(-10px, 30px);
+}
+
+.inter-content:hover {
+    scale: 105%;
+    z-index: 4;
+}
+
+
+/* === contact === */
+#contact {
+    width: 100%;
+    border-top: 1px solid #D9D9D9;
+    padding: clamp(50px, 1.5vw, 100px) 0 20px 0;
+}
+
+.contact-in {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.contact-in h1 {
+    font-family: "Krona One", sans-serif;
+    color: #000;
+    text-align: center;
+    margin-bottom: clamp(50px, 1.5vw, 100px);
+}
+
+.contact-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-list p {
+    font-size: clamp(10px, 1.5vw, 18px);
+}
+
+
+/* ===== tablet ===== */
+
+@media (max-width: 1024px) {
+
+    /* === interview === */
+    #interview {
+        margin: clamp(60px, 10vw, 100px) 0 250px 0;
+    }
+
+    .inter-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .inter-content {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 95%;
+        aspect-ratio: auto;
+        gap: 0 clamp(20px, 10vw, 100px);
+        padding: clamp(20px, 5vw, 40px) clamp(28px, 6vw, 48px) clamp(35px, 5vw, 55px) clamp(25px, 6vw, 45px);
+        align-items: flex-start;
+    }
+
+    .inter-left {
+        flex-shrink: 0;
+    }
+
+    .text-main {
+        margin-top: clamp(30px, 5vw, 49px);
+        margin-bottom: clamp(10px, 3vw, 20px);
+    }
+
+    .inter-content p {
+        font-size: clamp(14px, 1.5vw, 18px);
+    }
+
+    .inter-content:nth-child(1) {
+        rotate: -2deg;
+        transform: translate(0, 0);
+    }
+
+    .inter-content:nth-child(2) {
+        rotate: 2deg;
+        z-index: 3;
+
+        transform: translateY(50px);
+    }
+
+    .inter-content:nth-child(3) {
+        rotate: -2deg;
+        transform: translate(0, 100px);
+    }
+
+    .inter-content:hover {
+        scale: 105%;
+        z-index: 4;
+    }
+
+    /* === interview === */
+}
+
+
+@media (max-width:930px) {
+
+    /* === project === */
+    .project-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px 0;
+    }
+
+    .project-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .link {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .project-content p {
+        line-height: 1.8;
+    }
+
+    /* === project === */
+}
+
+
+/* ===== mobile-default ===== */
+
+@media (max-width:810px) {
+
+    /* === home === */
+    h1 {
+        font-size: clamp(32px, 4vw, 38px);
+    }
+
+    .home-in {
+        display: none;
+    }
+
+    .home-in-media {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+        justify-content: space-between;
+        min-width: 300px;
+        max-width: 450px;
+        width: 100%;
+        margin: auto;
+        box-sizing: border-box;
+        padding: 0 20px;
+        padding-top: 16vh;
+    }
+
+    #home .line {
+        height: 0.3vh;
+    }
+
+    #home .text-row:nth-child(2) .line {
+        width: 60%;
+    }
+
+    #home .text-row:nth-child(8) .line {
+        width: 25%;
+    }
+
+    #home .text-row:nth-child(1) video {
+        width: clamp(270px, 5.5vw, 270px);
+        min-height: 30px;
+    }
+
+    #home .text-row:nth-child(3) video {
+        width: clamp(310px, 5.5vw, 360px);
+        min-height: 30px;
+    }
+
+    #home .text-row:nth-child(5) video {
+        width: clamp(161px, 5.5vw, 200px);
+        min-height: 30px;
+    }
+
+    #home .text-row:nth-child(7) video {
+        width: clamp(299px, 5.5vw, 320px);
+        min-height: 30px;
+    }
+
+    #home .text-row:nth-child(3),
+    #home .text-row:nth-child(5),
+    #home .text-row:nth-child(7) {
+        margin: 0.5vw 0;
+    }
+
+    .scroll-arrow {
+        bottom: 50px;
+    }
+
+    /* === home === */
+
+
+    /* === mylogo === */
+    .mylogo {
+        padding: 15px 20px;
+        margin-left: -42.5px;
+    }
+
+    /* === mylogo === */
+
+
+    /* === nav === */
+    #gnb {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 5;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn img,
+    .topbtn img {
+        scale: 85%;
+    }
+
+    .menu-nav {
+        display: none;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 40px;
+        text-align: center;
+        gap: 20px 0;
+        padding: 30px 0;
+        position: fixed;
+        bottom: 140px;
+        right: 20px;
+        z-index: 5;
+    }
+
+    .menu-nav li a {
+        display: block;
+        padding: 10px 80px;
+    }
+
+    /* === nav === */
+
+
+    /* === skill === */
+    .skill-in {
+        display: none;
+    }
+
+    .skill-in-media {
+        max-width: 1320px;
+        width: 100%;
+        margin: auto;
+        padding: clamp(50px, 2.5vw, 100px) 20px;
+        box-sizing: border-box;
+
+        display: block;
+    }
+
+    .skill-middle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 0 10px;
+
+    }
+
+    .skill-top,
+    .skill-middle {
+        margin-bottom: clamp(20px, 2.5vw, 40px);
+    }
+
+    .skill-top p,
+    .skill-middle p,
+    .skill-bottom p {
+        font-family: 'SUIT-Regular';
+        color: #000;
+        text-align: center;
+        margin-top: 30%;
+        font-weight: 500;
+        font-size: clamp(10px, 2.5vw, 24px);
+    }
+
+    .skill-top h5,
+    .skill-middle h5,
+    .skill-bottom h5 {
+        color: #000;
+        text-align: center;
+        font-size: clamp(16px, 4.5vw, 36px);
+    }
+
+    .program,
+    .program2,
+    .program3,
+    .program4,
+    .program5 {
+        width: 30%;
+        height: 30%;
+        aspect-ratio: 1 / 1;
+        border: 1px solid #fff;
+        box-sizing: border-box;
+    }
+
+    /* === skill === */
+}
+
+@media (max-width: 523px) {
+
+    /* === interview === */
+    .inter-content {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .text-main {
+        margin-top: 0;
+        margin-bottom: clamp(10px, 3vw, 20px);
+    }
+
+    /* === interview === */
+}
+
+
+/* ===== mobile-S ===== */
+
+@media (max-width: 460px) and (min-width: 320px) {
+
+    /* === home === */
+    h1 {
+        font-size: clamp(14px, 7.5vw, 32px);
+    }
+
+    #home .text-row:nth-child(1) video {
+        width: 54vw;
+    }
+
+    #home .text-row:nth-child(3) video {
+        width: 65vw;
+    }
+
+    #home .text-row:nth-child(5) video {
+        width: 35vw;
+    }
+
+    #home .text-row:nth-child(7) video {
+        width: 65vw;
+    }
+
+    #home .text-row:nth-child(8) .line {
+        width: 18%;
+    }
+
+    /* === home === */
+
+
+    /* === mylogo === */
+    .mylogo {
+        padding: 10px 15px;
+        margin-left: -42.5px;
+        font-size: clamp(10px, 1.5vw, 18px);
+    }
+
+    /* === mylogo === */
+
+
+    /* === about === */
+    .year {
+        font-size: 10px;
+    }
+
+    /* === about === */
+}
