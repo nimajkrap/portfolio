@@ -66,3 +66,34 @@ $(".projecttop").on("click", function () {
     }, 400)
     return false;
 });
+
+// short
+// Swiper 실행
+const shortSwiper = new Swiper(".shortSwiper", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: "auto",
+
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+});
+
+// 영상 재생
+function playVideo(el) {
+  const videos = document.querySelectorAll("#short video");
+
+  videos.forEach(v => {
+    v.pause();
+    v.currentTime = 0;
+    v.muted = true; // 👉 다른 영상은 무음으로 초기화
+  });
+
+  const video = el.querySelector("video");
+
+  video.muted = false; // 🔥 클릭한 영상만 소리 ON
+  video.play();
+
+  el.querySelector(".play-btn").style.display = "none";
+}
