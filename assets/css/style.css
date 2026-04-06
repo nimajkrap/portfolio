@@ -108,10 +108,22 @@ ul {
     display: flex;
 }
 
+.text {
+  white-space: nowrap;
+}
+
 .text-row {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
+}
+
+.text-mask,
+.video-mask,
+.sign-mask {
+  flex-shrink: 0;
 }
 
 .text-deco {
@@ -124,10 +136,12 @@ ul {
     }
 }
 
+
 .text-mask,
 .sign-mask {
     display: inline-block;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .text-mask .text,
@@ -731,6 +745,88 @@ video {
     font-size: clamp(10px, 1.5vw, 18px);
 }
 
+/* ===== short ===== */
+#short {
+  background: #ffffff;
+  padding: 100px 0;
+}
+
+/* 슬라이드 */
+.shortSwiper {
+  padding: 40px 0px;
+}
+
+.short-slider {
+  max-width: 1280px;
+  margin: 0 auto; /* 가운데 정렬 */
+  position: relative;
+}
+
+.view-label {
+  position: absolute;
+  top: -25px;
+  right: 5px;
+
+  font-size: 12px;
+  color: #818181;
+}
+
+.shortSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  width: auto !important;
+}
+
+/* 영상 박스 */
+.video-box {
+  width: 200px;
+  aspect-ratio: 9/16;
+  max-width: 220px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* 영상 */
+.video-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.video-box:hover video {
+  transform: scale(1.1);
+}
+
+/* 재생 버튼 */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  color: white;
+  pointer-events: none;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.view-count {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.295);
+  
+  padding: 4px 8px;
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+}
 
 /* ===== tablet ===== */
 
