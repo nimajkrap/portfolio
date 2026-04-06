@@ -12,6 +12,8 @@
 
     <!-- font -->
     <link rel="stylesheet" href="./assets/css/font.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </head>
 
@@ -218,6 +220,7 @@
     <div id="gnb">
         <ul class="nav">
             <li><a href="#about">ABOUT</a></li>
+            <li><a href="#short">SHORT</a></li>
             <li><a href="#project">PROJECT</a></li>
             <li><a href="#skill">SKILL</a></li>
             <li><a href="#interview">INTERVIEW</a></li>
@@ -231,6 +234,7 @@
             <span class="dropbtn"><img src="./assets/img/menu.png" alt="메뉴바"></span>
             <ul class="menu-nav">
                 <li><a href="#about">ABOUT</a></li>
+                <li><a href="#short">SHORT</a></li>
                 <li><a href="#project">PROJECT</a></li>
                 <li><a href="#skill">SKILL</a></li>
                 <li><a href="#interview">INTERVIEW</a></li>
@@ -288,6 +292,15 @@
         <div class="line"></div>
 
         <div class="about-text">
+            <h3>WORK</h3>
+            <div class="text-rignt">
+                <h2 class="year">(2025)</h2>
+                <h4>경성대학교 홍보팀</h4>
+            </div>
+        </div>
+        <div class="line"></div>
+
+        <div class="about-text">
             <h3>LICENSE</h3>
             <div class="text-rignt">
                 <h2 class="year">(2019)</h2>
@@ -297,6 +310,72 @@
         <div class="line"></div>
     </div>
     <!-- about -->
+
+    <!-- short -->
+    <div id="short">
+
+        <div class="tit">
+            <h2>SHORT</h2>
+        </div>
+
+        <div class="short-slider">
+            <div class="view-label">*조회수 기준: 2025. 4. 6</div>
+            <div class="swiper shortSwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="video-box" onclick="playVideo(this)">
+                            <video src="./assets/video/video11.mp4" poster="./assets/img/portfolio/thumbl11.jpg"></video>
+                            <div class="play-btn">▶</div>
+                            <div class="view-count">👁 124K</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="video-box" onclick="playVideo(this)">
+                            <video src="./assets/video/video18.mp4" poster="./assets/img/portfolio/thumbl12.jpg"></video>
+                            <div class="play-btn">▶</div>
+                            <div class="view-count">👁 31K</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="video-box" onclick="playVideo(this)">
+                            <video src="./assets/video/video13.mp4" poster="./assets/img/portfolio/thumbl13.jpg"></video>
+                            <div class="play-btn">▶</div>
+                            <div class="view-count">👁 770K</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="video-box" onclick="playVideo(this)">
+                            <video src="./assets/video/video14.mp4" poster="./assets/img/portfolio/thumbl14.png"></video>
+                            <div class="play-btn">▶</div>
+                            <div class="view-count">👁 1.09M</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="video-box" onclick="playVideo(this)">
+                            <video src="./assets/video/video15.MOV" poster="./assets/img/portfolio/thumbl15.jpg"></video>
+                            <div class="play-btn">▶</div>
+                            <div class="view-count">👁  -</div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="video-box" onclick="playVideo(this)">
+                            <video src="./assets/video/video16.MP4" poster="./assets/img/portfolio/thumbl16.jpg"></video>
+                            <div class="play-btn">▶</div>
+                            <div class="view-count">👁 1.28M</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- short -->
 
     <!-- project -->
     <div id="project">
@@ -523,7 +602,7 @@
                 <div class="inter-right">
                     <p class="text-main">저는 <b>알고리즘</b> 같은 디자이너입니다.</p>
                     <p class="text-explan">
-                        알고리즘 처럼, 트렌드를 분석하고, 그 안에서 최적의 방향을 찾아내 디자인을 합니다. 또한, 저와 한 번 함께하면 자꾸 찾게되는, 헤어나올 수 없는 그런 매력을 가지고
+                        알고리즘 처럼, 트렌드를 분석하고, 데이터와 감각을 바탕으로 가장 적합한 방향을 제안하는 디자인을 합니다. 또한, 저와 한 번 함께하면 자꾸 찾게되는, 헤어나올 수 없는 그런 매력을 가지고
                         있습니다.
                     </p>
                 </div>
@@ -557,7 +636,7 @@
                     <p class="text-main">중요하게 생각하는 것은 <b>소통</b>입니다.</p>
                     <p class="text-explan">
                         아르바이트와 팀 활동을 하면서 가장 크게 느낀 점은 소통의 중요성입니다. 소통이 원활할수록 서로의 의견을 잘 이해하고 효율적으로 진행되어 더 좋은 결과를 만들 수 있다고
-                        생각합니다.
+                        생각합니다. 그래서 저는 사소한 것도 함께 나누고 공유하려는 편입니다. 
                     </p>
                 </div>
             </div>
@@ -590,4 +669,5 @@
     <!-- my js -->
     <script src="./assets/js/index.js"></script>
 </body>
+
 </html>
