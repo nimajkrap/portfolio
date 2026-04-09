@@ -789,8 +789,17 @@ video {
   transition: 0.3s;
 }
 
+.video-box::before {
+  content: "";
+  display: block;
+  padding-top: 177.77%; /* 9:16 비율 */
+}
+
 /* 영상 */
 .video-box video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -799,6 +808,10 @@ video {
 
 .video-box:hover video {
   transform: scale(1.1);
+}
+
+.shortSwiper .swiper-slide {
+  height: auto !important;
 }
 
 /* 재생 버튼 */
